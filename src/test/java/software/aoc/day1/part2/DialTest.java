@@ -1,0 +1,37 @@
+package software.aoc.day1.part2;
+
+import org.junit.Test;
+import java.io.IOException;
+import java.io.InputStream;
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class DialTest {
+    private static final String orders = """
+                                          L68
+                                          L30
+                                          R48
+                                          L5
+                                          R60
+                                          L55
+                                          L1
+                                          L99
+                                          R14
+                                          L82
+                                          """;
+
+    @Test
+    public void given_orders_should_account_the_times_that_dial_crosses_zero() {
+        assertThat(Dial.create().execute(orders).count()).isEqualTo(6);
+        assertThat(Dial.create().add("L1").count()).isEqualTo(0);
+        assertThat(Dial.create().add("L1", "R1", "R50").count()).isEqualTo(1);
+        assertThat(Dial.create().add("L51", "L500").count()).isEqualTo(6);
+    }
+
+    @Test
+    public void reward() throws IOException {
+        try (InputStream inputStream = DialTest.class.getResourceAsStream("/day1/input1.txt")) {
+            assertThat(Dial.create().execute(new String(inputStream.readAllBytes())).count()).isEqualTo(6616);
+        }
+    }
+
+}

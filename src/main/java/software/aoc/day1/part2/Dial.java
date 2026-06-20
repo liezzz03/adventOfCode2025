@@ -1,11 +1,13 @@
-package software.aoc.day1;
+package software.aoc.day1.part2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Dial {
+
     private static final int INITIAL_POSITION = 50;
     private static final int DIAL_SIZE = 100;
 
@@ -20,35 +22,26 @@ public class Dial {
     }
 
     public Dial execute(String orders) {
-        // Expresión regular que cubre tanto \n (Linux/Mac) como \r\n (Windows)
+        // Divide usando tanto \n como \r\n para mayor seguridad
         return add(orders.split("\\r?\\n"));
     }
 
     public Dial add(String... orders) {
         return new Dial(Arrays.stream(orders)
-                .map(String::trim)           // Quita cualquier \r o espacio sobrante
-                .filter(s -> !s.isEmpty())   // Ignora las líneas en blanco (común al final del input)
+                .map(String::trim)           // Elimina espacios y el problemático \r
+                .filter(s -> !s.isEmpty())   // Descarta líneas vacías
                 .map(Rotation::from)
                 .toList());
     }
 
     public int count() {
-        return (int) iterate()
-                .map(this::sumPartial)
-                .filter(s -> s == 0)
-                .count();
+        return IntStream.range(0, rotations.size())
+                .map(this::crossedZeroAtIndex)
+                .sum();
     }
 
-    public int position() {
-        return normalize(sumAll());
-    }
-
-    private int sumAll() {
-        return sum(rotations.stream());
-    }
-
-    private IntStream iterate() {
-        return IntStream.rangeClosed(1, rotations.size());
+    private int crossedZeroAtIndex(int i) {
+        return rotations.get(i).crossingsFrom(sumPartial(i));
     }
 
     private int sumPartial(int size) {
@@ -63,4 +56,3 @@ public class Dial {
         return ((value < 0 ? DIAL_SIZE : 0) + value % DIAL_SIZE) % DIAL_SIZE;
     }
 }
-

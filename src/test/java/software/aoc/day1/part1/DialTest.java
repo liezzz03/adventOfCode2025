@@ -1,6 +1,7 @@
-package software.aoc.day1;
+package software.aoc.day1.part1;
 
 import org.junit.Test;
+
 import java.io.IOException;
 import java.io.InputStream;
 import static org.assertj.core.api.Assertions.assertThat;
