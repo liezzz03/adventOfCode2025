@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 9">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day10/part1/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day10/part1/Factory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day10/part1/LightIndicator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day10/part1/Machine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day10/part2/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day10/part2/Factory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day10/part2/JoltageEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day10/part2/JoltageState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day10/part2/Machine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day10/part1/FactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day10/part2/FactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/day10/input10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 10">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day11/part1/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day11/part1/Reactor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day11/part2/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day11/part2/Reactor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day11/part2/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day11/part1/ReactorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day11/part2/ReactorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/day11/input11.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1781949451154</updated>
-      <workItem from="1781949452221" duration="17276000" />
+      <workItem from="1781949452221" duration="17942000" />
     </task>
     <task id="LOCAL-00001" summary="Day 1 Part 1">
       <option name="closed" value="true" />
@@ -164,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781975033182</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Day 10">
+      <option name="closed" value="true" />
+      <created>1781978530995</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1781978530995</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +185,7 @@
     <MESSAGE value="Day 7" />
     <MESSAGE value="Day 8" />
     <MESSAGE value="Day 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 9" />
+    <MESSAGE value="Day 10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 10" />
   </component>
 </project>
