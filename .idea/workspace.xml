@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 7">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/JunctionBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/Pair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/part1/CircuitSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/part1/Playground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/part2/CircuitSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/part2/Playground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day8/part1/PlaygroundTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day8/part2/PlaygroundTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/day8/input8.txt" afterDir="false" />
+    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 8">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day9/part1/MovieTheater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day9/part1/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day9/part1/RedTile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day9/part2/Interval.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day9/part2/MovieTheater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day9/part2/Polygon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day9/part2/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day9/part2/Tile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day9/part1/MovieTheaterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day9/part2/MovieTheaterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/day9/input9.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1781949451154</updated>
-      <workItem from="1781949452221" duration="15287000" />
+      <workItem from="1781949452221" duration="16105000" />
     </task>
     <task id="LOCAL-00001" summary="Day 1 Part 1">
       <option name="closed" value="true" />
@@ -145,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781973108492</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Day 8">
+      <option name="closed" value="true" />
+      <created>1781974234372</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1781974234372</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +171,7 @@
     <MESSAGE value="Day 5" />
     <MESSAGE value="Day 6" />
     <MESSAGE value="Day 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 7" />
+    <MESSAGE value="Day 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 8" />
   </component>
 </project>
