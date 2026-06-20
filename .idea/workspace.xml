@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 1 Part 2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/GiftShopDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/Range.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day2/GiftShopDatabaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/day2/input2.txt" afterDir="false" />
+    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 2 Part 1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/part2/GiftShopDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/part2/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day2/part2/GiftShopDatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/day2/GiftShopDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/part1/GiftShopDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/day2/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/part1/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/software/aoc/day2/GiftShopDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day2/part1/GiftShopDatabaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Record" />
         <option value="Enum" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -52,6 +53,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="software.aoc.day2.part1" />
       <recent name="software.aoc.day1.part1" />
     </key>
   </component>
@@ -63,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1781949451154</updated>
-      <workItem from="1781949452221" duration="4172000" />
+      <workItem from="1781949452221" duration="4869000" />
     </task>
     <task id="LOCAL-00001" summary="Day 1 Part 1">
       <option name="closed" value="true" />
@@ -81,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781952091374</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Day 2 Part 1">
+      <option name="closed" value="true" />
+      <created>1781956300320</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1781956300320</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +100,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Day 1 Part 1" />
     <MESSAGE value="Day 1 Part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 1 Part 2" />
+    <MESSAGE value="Day 2 Part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 2 Part 1" />
   </component>
 </project>

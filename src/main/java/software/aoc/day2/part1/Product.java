@@ -1,4 +1,4 @@
-package software.aoc.day2;
+package software.aoc.day2.part1;
 
 public record Product(long id) {
     public boolean isInvalid() {

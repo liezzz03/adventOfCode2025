@@ -1,4 +1,4 @@
-package software.aoc.day2;
+package software.aoc.day2.part1;
 
 import software.aoc.day2.Range;
 import java.util.Arrays;
