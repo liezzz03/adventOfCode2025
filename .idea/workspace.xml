@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 6">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day7/TachyonCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day7/TachyonGrid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day7/part1/TachyonManifold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day7/part2/TachyonManifold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day7/part1/TachyonManifoldTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day7/part2/TachyonManifold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/day7/input7.txt" afterDir="false" />
+    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 7">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/JunctionBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/part1/CircuitSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/part1/Playground.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/part2/CircuitSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day8/part2/Playground.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day8/part1/PlaygroundTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day8/part2/PlaygroundTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/day8/input8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Record" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -60,29 +63,6 @@
       <recent name="software.aoc.day1.part1" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="TachyonManifoldTest.reward" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="adventOfCode2025" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="software.aoc.day7.part2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="software.aoc.day7.part2" />
-      <option name="MAIN_CLASS_NAME" value="software.aoc.day7.part2.TachyonManifoldTest" />
-      <option name="METHOD_NAME" value="reward" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.TachyonManifoldTest.reward" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -91,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1781949451154</updated>
-      <workItem from="1781949452221" duration="14010000" />
+      <workItem from="1781949452221" duration="15287000" />
     </task>
     <task id="LOCAL-00001" summary="Day 1 Part 1">
       <option name="closed" value="true" />
@@ -157,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781972096305</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Day 7">
+      <option name="closed" value="true" />
+      <created>1781973108492</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1781973108492</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +160,7 @@
     <MESSAGE value="Day 4" />
     <MESSAGE value="Day 5" />
     <MESSAGE value="Day 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 6" />
+    <MESSAGE value="Day 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 7" />
   </component>
 </project>
