@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 1 Part 1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day1/part2/Dial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day1/part2/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day1/part2/Rotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day1/part2/DialTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/day1/Dial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day1/part1/Dial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/aoc/day1/Rotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day1/part1/Rotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/software/aoc/day1/DialTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day1/part1/DialTest.java" afterDir="false" />
+    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 1 Part 2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/GiftShopDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day2/Range.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day2/GiftShopDatabaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/day2/input2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1781949451154</updated>
-      <workItem from="1781949452221" duration="2307000" />
+      <workItem from="1781949452221" duration="4172000" />
     </task>
     <task id="LOCAL-00001" summary="Day 1 Part 1">
       <option name="closed" value="true" />
@@ -75,7 +73,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781951190486</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Day 1 Part 2">
+      <option name="closed" value="true" />
+      <created>1781952091374</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1781952091374</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +89,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Day 1 Part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 1 Part 1" />
+    <MESSAGE value="Day 1 Part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 1 Part 2" />
   </component>
 </project>
