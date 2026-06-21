@@ -1,0 +1,16 @@
+# Advent of Code 2025 - Day 11 Part 2: Reactor
+
+En la segunda parte del reto, la regla de negocio para dar por válido un camino evoluciona: ya no basta con llegar al nodo de salida (`out`), sino que es estrictamente obligatorio que la ruta haya pasado previamente por dos dispositivos críticos específicos (`dac` y `fft`). Además, la magnitud geométrica de las combinaciones posibles exige un rediseño algorítmico para evitar tiempos de ejecución exponenciales.
+
+## Diferencias Parte A vs Parte B
+
+El problema pasa de ser una simple exploración de caminos a un problema de conteo masivo condicionado:
+* **Parte A:** Exploraba todas las rutas utilizando un `Set<String>` de nodos visitados para suprimir ramas, devolviendo un entero de 32 bits (`int`).
+* **Parte B:** Introduce dependencias de ruta. El estado de la recursión ya no depende del historial completo de nodos, sino de si se han cumplido los "hitos" obligatorios. Debido a la explosión combinatoria de las rutas válidas en grafos acíclicos dirigidos (DAG), el conteo se escala a 64 bits (`long`) para prevenir el desbordamiento numérico.
+
+## Evolución del Diseño y Nuevas Técnicas Utilizadas
+
+* **Memoización y Programación Dinámica (*Caching*):** La innovación algorítmica más crítica es la introducción del mapa `savedStates`. Dado que en un grafo las rutas convergen (se puede llegar al mismo nodo intermedio con los mismos hitos cumplidos a través de diferentes caminos iniciales), el método `computeIfAbsentOnSavedStates` intercepta la recursividad. Si el árbol que cuelga de un `State` ya fue calculado previamente, recupera el conteo de rutas válidas en $O(1)$. Esto colapsa la complejidad temporal exponencial a una lineal o polinómica respecto al número de nodos y estados.
+* **Encapsulación del Estado Computacional (*State Object Pattern*):** En lugar de añadir múltiples parámetros booleanos a la firma del método recursivo (`boolean dacVisited, boolean fftVisited`), se ha modelado el *Record* `State`. Esto previene la *obsesión por los primitivos* y agrupa la posición espacial en el grafo (`device`) con su estado lógico asociado, creando una clave compuesta perfecta y robusta para el mapa de caché (aprovechando la implementación inmutable y automática de `equals` y `hashCode` de los *Records*).
+* **Transiciones de Estado Inmutables y Puras:** La lógica de actualizar los hitos se ha delegado al propio estado mediante el método `State.next(Device)`. Utilizando operadores lógicos (`this.dacVisited || nextDevice.name().equals("dac")`), el sistema evalúa si acaba de pisar un nodo crítico y devuelve una **nueva instancia** de `State`. El estado original no sufre mutaciones, lo cual es un requisito innegociable para que el *backtracking* y la caché funcionen sin corromperse.
+* **Evaluación Condicional Diferida:** El orquestador `Reactor` ya no suma automáticamente un `1` al llegar a `"out"`. En su lugar, el caso base de la recursión delega en `evaluateIfPathValid(currentState)`. Solo si el estado histórico del camino certifica que ambos hitos fueron visitados (`state.dacVisited() && state.fftVisited()`), la ruta contribuye al sumatorio global, aplicando las reglas de negocio de forma clara y separada de la lógica de navegación.

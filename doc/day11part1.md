@@ -1,0 +1,14 @@
+# Advent of Code 2025 - Day 11 Part 1: Reactor
+
+Solución diseñada bajo los principios de **Ingeniería del Software II** de la ULPGC. Esta implementación aborda un problema clásico de teoría de grafos (búsqueda de rutas / pathfinding) garantizando una inmutabilidad estricta y evitando los típicos errores de estado asociados al *backtracking* imperativo.
+
+## Modelado del Dominio y Grafos Inmutables
+
+* **Listas de Adyacencia Declarativas:** La red del reactor se ha modelado como un grafo dirigido donde `Reactor` actúa como el contenedor principal (`Map<String, Device>`) y el *Record* inmutable `Device` representa los vértices. La clase encapsula su nombre y las conexiones salientes (`successors`), promoviendo una alta cohesión semántica.
+* **Inmutabilidad en la Construcción:** Añadir sucesores a un dispositivo no muta una lista interna (no hay `.add()`). El método `addSuccessor` utiliza `Stream.concat` para devolver una **nueva instancia** del dispositivo. A nivel superior, la lectura de datos utiliza `reduce` para ensamblar las conexiones de cada vértice de manera puramente funcional.
+* **Programación Defensiva (Nodos Implícitos):** El grafo exige que todos los caminos válidos terminen en el nodo `"out"`. Para evitar temidas `NullPointerException` al buscar sucesores que apuntan al final (`devices.get("out")`), el constructor de `Reactor` inyecta proactivamente un sumidero vacío explícito (`Stream.of(Device.with("out"))`) en el *pipeline* de creación del mapa, asegurando que el grafo sea topológicamente seguro.
+
+## Búsqueda en Profundidad (DFS) sin Efectos Secundarios
+
+* **Backtracking Funcional y Seguro:** En la programación imperativa, rastrear caminos requiere una estructura global (ej. `Set<String> visited`) donde los nodos se "marcan" al entrar en la recursión y se "desmarcan" al retroceder. Este diseño acopla el estado y es propenso a errores paralelos. Aquí, el método `combine()` genera un **nuevo conjunto inmutable** y se lo pasa a cada rama recursiva. Cada ruta tiene su propio "historial" independiente, eliminando la necesidad de deshacer estados y garantizando la ausencia de efectos colaterales (*side-effects*).
+* **Cálculo de Rutas Declarativo:** El algoritmo para contar los caminos posibles prescinde por completo de contadores globales. Los casos base definen axiomáticamente que llegar a `"out"` vale `1` ruta exitosa y caer en un nodo ya visitado (ciclo infinito) vale `0`. Para el paso recursivo, el sistema delega en el comportamiento de los hijos: extrae los sucesores, les pregunta cuántas rutas válidas tienen y suma algebraicamente los resultados (`mapToInt(...).sum()`). El código resultante tiene una complejidad ciclomática de cero bucles explícitos.

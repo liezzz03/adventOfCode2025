@@ -4,15 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 11">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day12/Angle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day12/ChristmasTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day12/ChristmasTreeFarm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day12/ChristmasTreeRegion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day12/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/aoc/day12/Present.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/software/aoc/day12/ChristmasTreeFarmTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/day12/input12.txt" afterDir="false" />
+    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 12">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day10part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day10part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day11part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day11part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day12.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day1part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day1part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day2part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day2part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day3part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day3part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day4part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day4part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day5part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day5part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day6part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day6part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day7part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day7part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day8part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day8part2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day9part1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/day9part2.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,9 +49,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="3FOcF6qXfcZBbKk29QR0Gp1hsq8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -52,6 +71,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -70,7 +90,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1781949451154</updated>
-      <workItem from="1781949452221" duration="18813000" />
+      <workItem from="1781949452221" duration="19379000" />
+      <workItem from="1782034690889" duration="4104000" />
     </task>
     <task id="LOCAL-00001" summary="Day 1 Part 1">
       <option name="closed" value="true" />
@@ -176,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781979058441</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Day 12">
+      <option name="closed" value="true" />
+      <created>1781979738761</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1781979738761</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +225,7 @@
     <MESSAGE value="Day 9" />
     <MESSAGE value="Day 10" />
     <MESSAGE value="Day 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 11" />
+    <MESSAGE value="Day 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 12" />
   </component>
 </project>
