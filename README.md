@@ -37,31 +37,28 @@ Se ha utilizado inteligencia artificial como herramienta de apoyo académico par
 
 ## Índice de Soluciones
 
-|   Día    | Título                | Documentación | Código Fuente | Técnicas y Estrategias Aplicadas |
-|:--------:|-----------------------|---|---|---|
-| **1.1**  | *Secret Entrance*     | [Doc](doc/day01-a.md) | [Main](src/main/java/software/aoc/day1/part1) | Modelado de Dominio, Tell Don't Ask, SRP. |
-| **1.2**  | *Secret Entrance*     | [Doc](doc/day01-b.md) | [Main](src/main/java/software/aoc/day1/part2) | Strategy, Inyección de Dependencias, Polymorphism, LSP. |
-| **2.1**  | *Gift Shop*           | [Doc](doc/day02-a.md) | [Main](src/main/java/software/aoc/day2/part1) | Encapsulación Regex, Eliminación Complejidad Ciclomática. |
-| **2.2**  | *Gift Shop*           | [Doc](doc/day02-b.md) | [Main](src/main/java/software/aoc/day2/part2) | OCP (Open/Closed Principle), Mantenibilidad Declarativa. |
-| **3.1**  | *Lobby*               | [Doc](doc/day03-a.md) | [Main](src/main/java/software/aoc/day3/part1) | Funciones Reductoras Declarativas, Sanitización Defensiva. |
-| **3.2**  | *Lobby*               | [Doc](doc/day03-b.md) | [Main](src/main/java/software/aoc/day3/part2) | State Object (Selector), Streams Generativos (`iterate`). |
-| **4.1**  | *Printing Department* | [Doc](doc/day04-a.md) | [Main](src/main/java/software/aoc/day4/part1) | Travesía Declarativa de Matrices (`flatMap`), Rich Domain. |
-| **4.2**  | *Printing Department* | [Doc](doc/day04-b.md) | [Main](src/main/java/software/aoc/day4/part2) | Simulación Inmutable (Autómata Celular), Proyección Lógica. |
-| **5.1**  | *Cafeteria*           | [Doc](doc/day05-a.md) | [Main](src/main/java/software/aoc/day5/part1) | Short-Circuiting Evaluation (`anyMatch`), Value Objects. |
-| **5.2**  | *Cafeteria*           | [Doc](doc/day05-b.md) | [Main](src/main/java/software/aoc/day5/part2) | Algoritmo Merge Intervals, Null Object Pattern, Fold Funcional. |
-| **6.1**  | *Trash Compactor*     | [Doc](doc/day06-a.md) | [Main](src/main/java/software/aoc/day6/part1) | Iterator Pattern, Lazy Evaluation, Strategy (Operadores). |
-| **6.2**  | *Trash Compactor*     | [Doc](doc/day06-b.md) | [Main](src/main/java/software/aoc/day6/part2) | OCP Perfecto (cero cambios al dominio), Transposición de Matrices. |
-| **7.1**  | *Laboratories*        | [Doc](doc/day07-a.md) | [Main](src/main/java/software/aoc/day7/part1) | Recursividad Inmutable, Evasión Primitive Obsession. |
-| **7.2**  | *Laboratories*        | [Doc](doc/day07-b.md) | [Main](src/main/java/software/aoc/day7/part2) | Programación Dinámica, Reducción Espacio de Estados. |
-| **8.1**  | *Playground*          | [Doc](doc/day08-a.md) | [Main](src/main/java/software/aoc/day8/part1) | Estructuras Disjoint Sets, Producto Cartesiano Funcional. |
-| **8.2**  | *Playground*          | [Doc](doc/day08-b.md) | [Main](src/main/java/software/aoc/day8/part2) | Algoritmo Kruskal Declarativo, Retención de Estados. |
-| **9.1**  | *Movie Theater*       | [Doc](doc/day09-a.md) | [Main](src/main/java/software/aoc/day9/part1) | Geometría Funcional, Expresividad de Búsqueda de Máximos. |
-| **9.2**  | *Movie Theater*       | [Doc](doc/day09-b.md) | [Main](src/main/java/software/aoc/day9/part2) | Ray-Casting/Scanline, Búsqueda Binaria, Evaluación Perezosa. |
-| **10.1** | *Circuit Breaker*     | [Doc](doc/day10-a.md) | [Main](src/main/java/software/aoc/day10/part1) | Bitwise Operations de alta eficiencia, Parseo Regex Funcional. |
-| **10.2** | *Circuit Breaker*     | [Doc](doc/day10-b.md) | [Main](src/main/java/software/aoc/day10/part2) | Memoización, Poda Heurística (Pruning), Optionals Funcionales. |
-| **11.1** | *Factory*             | [Doc](doc/day11-a.md) | [Main](src/main/java/software/aoc/day11/part1) | Búsqueda en Profundidad (DFS) Inmutable, Listas Adyacencia. |
-| **11.2** | *Factory*             | [Doc](doc/day11-b.md) | [Main](src/main/java/software/aoc/day11/part2) | Patrón Memoize, Transiciones Puras, State Object Pattern. |
-|  **12**  | *Christmas Tree Farm* | [Doc](doc/day12-a.md) | [Main](src/main/java/software/aoc/day12) | 2D Bin Packing, Strategy de Ángulos, Heurística Largest-First. |
-
----
-*Proyecto realizado como parte de la asignatura de Ingeniería del Software II - ULPGC.*
+|   Día    | Título                | Documentación           | Código Fuente | Técnicas y Estrategias Aplicadas |
+|:--------:|-----------------------|-------------------------|---|---|
+| **1.1**  | *Secret Entrance*     | [Doc](doc/day1part1.md) | [Main](src/main/java/software/aoc/day1/part1) | Modelado de Dominio, Tell Don't Ask, SRP. |
+| **1.2**  | *Secret Entrance*     | [Doc](doc/day1part2.md) | [Main](src/main/java/software/aoc/day1/part2) | Strategy, Inyección de Dependencias, Polymorphism, LSP. |
+| **2.1**  | *Gift Shop*           | [Doc](doc/day2part1.md) | [Main](src/main/java/software/aoc/day2/part1) | Encapsulación Regex, Eliminación Complejidad Ciclomática. |
+| **2.2**  | *Gift Shop*           | [Doc](doc/day2part2.md) | [Main](src/main/java/software/aoc/day2/part2) | OCP (Open/Closed Principle), Mantenibilidad Declarativa. |
+| **3.1**  | *Lobby*               | [Doc](doc/day3part1.md) | [Main](src/main/java/software/aoc/day3/part1) | Funciones Reductoras Declarativas, Sanitización Defensiva. |
+| **3.2**  | *Lobby*               | [Doc](doc/day3part2-b.md) | [Main](src/main/java/software/aoc/day3/part2) | State Object (Selector), Streams Generativos (`iterate`). |
+| **4.1**  | *Printing Department* | [Doc](doc/day4part1.md) | [Main](src/main/java/software/aoc/day4/part1) | Travesía Declarativa de Matrices (`flatMap`), Rich Domain. |
+| **4.2**  | *Printing Department* | [Doc](doc/day4part2.md) | [Main](src/main/java/software/aoc/day4/part2) | Simulación Inmutable (Autómata Celular), Proyección Lógica. |
+| **5.1**  | *Cafeteria*           | [Doc](doc/day5part1.md) | [Main](src/main/java/software/aoc/day5/part1) | Short-Circuiting Evaluation (`anyMatch`), Value Objects. |
+| **5.2**  | *Cafeteria*           | [Doc](doc/day5part2.md) | [Main](src/main/java/software/aoc/day5/part2) | Algoritmo Merge Intervals, Null Object Pattern, Fold Funcional. |
+| **6.1**  | *Trash Compactor*     | [Doc](doc/day6part1.md) | [Main](src/main/java/software/aoc/day6/part1) | Iterator Pattern, Lazy Evaluation, Strategy (Operadores). |
+| **6.2**  | *Trash Compactor*     | [Doc](doc/day6part2.md) | [Main](src/main/java/software/aoc/day6/part2) | OCP Perfecto (cero cambios al dominio), Transposición de Matrices. |
+| **7.1**  | *Laboratories*        | [Doc](doc/day7part1.md) | [Main](src/main/java/software/aoc/day7/part1) | Recursividad Inmutable, Evasión Primitive Obsession. |
+| **7.2**  | *Laboratories*        | [Doc](doc/day7part2.md) | [Main](src/main/java/software/aoc/day7/part2) | Programación Dinámica, Reducción Espacio de Estados. |
+| **8.1**  | *Playground*          | [Doc](doc/day8part1.md) | [Main](src/main/java/software/aoc/day8/part1) | Estructuras Disjoint Sets, Producto Cartesiano Funcional. |
+| **8.2**  | *Playground*          | [Doc](doc/day8part2.md) | [Main](src/main/java/software/aoc/day8/part2) | Algoritmo Kruskal Declarativo, Retención de Estados. |
+| **9.1**  | *Movie Theater*       | [Doc](doc/day9part1.md) | [Main](src/main/java/software/aoc/day9/part1) | Geometría Funcional, Expresividad de Búsqueda de Máximos. |
+| **9.2**  | *Movie Theater*       | [Doc](doc/day9part2.md) | [Main](src/main/java/software/aoc/day9/part2) | Ray-Casting/Scanline, Búsqueda Binaria, Evaluación Perezosa. |
+| **10.1** | *Circuit Breaker*     | [Doc](doc/day10part1.md) | [Main](src/main/java/software/aoc/day10/part1) | Bitwise Operations de alta eficiencia, Parseo Regex Funcional. |
+| **10.2** | *Circuit Breaker*     | [Doc](doc/day10part2.md) | [Main](src/main/java/software/aoc/day10/part2) | Memoización, Poda Heurística (Pruning), Optionals Funcionales. |
+| **11.1** | *Factory*             | [Doc](doc/day11part1.md) | [Main](src/main/java/software/aoc/day11/part1) | Búsqueda en Profundidad (DFS) Inmutable, Listas Adyacencia. |
+| **11.2** | *Factory*             | [Doc](doc/day11part2.md) | [Main](src/main/java/software/aoc/day11/part2) | Patrón Memoize, Transiciones Puras, State Object Pattern. |
+|  **12**  | *Christmas Tree Farm* | [Doc](doc/day12.md)     | [Main](src/main/java/software/aoc/day12) | 2D Bin Packing, Strategy de Ángulos, Heurística Largest-First. |

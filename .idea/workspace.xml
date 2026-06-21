@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Day 12">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day10part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day10part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day11part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day11part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day12.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day1part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day1part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day2part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day2part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day3part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day3part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day4part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day4part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day5part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day5part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day6part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day6part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day7part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day7part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day8part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day8part2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day9part1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/day9part2.md" afterDir="false" />
+    <list default="true" id="cba91f96-60bf-4fcd-b4bd-e7d2e1343d98" name="Changes" comment="Documentation &amp; README">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1781949451154</updated>
       <workItem from="1781949452221" duration="19379000" />
-      <workItem from="1782034690889" duration="4104000" />
+      <workItem from="1782034690889" duration="5348000" />
     </task>
     <task id="LOCAL-00001" summary="Day 1 Part 1">
       <option name="closed" value="true" />
@@ -205,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781979738761</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Documentation &amp; README">
+      <option name="closed" value="true" />
+      <created>1782042146405</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1782042146405</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +210,7 @@
     <MESSAGE value="Day 10" />
     <MESSAGE value="Day 11" />
     <MESSAGE value="Day 12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 12" />
+    <MESSAGE value="Documentation &amp; README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation &amp; README" />
   </component>
 </project>
