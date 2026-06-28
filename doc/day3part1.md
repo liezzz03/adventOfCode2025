@@ -14,4 +14,8 @@ Solución diseñada bajo los principios de **Ingeniería del Software II** de la
 
 * **Resolución Declarativa de Búsqueda:** Para calcular el `maxJoltage`, se debe encontrar el valor máximo y, posteriormente, el valor máximo del subconjunto restante. En lugar de utilizar bucles anidados (`for`) y variables de estado mutables para rastrear los índices, se ha implementado un enfoque puramente funcional:
     * **Uso de `reduce`:** El método `bestFirstBatteryIndex` utiliza `IntStream.range().reduce(this::pickBest)` para encontrar el índice del valor más alto de forma declarativa.
-    * **Streams Delimitados:** Para el segundo valor, se utiliza `Arrays.stream(batteries, start, end).max()`, lo que permite acotar la búsqueda al sub-array válido sin extraer ni copiar datos en memoria, log
+    * **Streams Delimitados:** Para el segundo valor, se utiliza `Arrays.stream(batteries, start, end).max()`, lo que permite acotar la búsqueda al sub-array válido sin extraer ni copiar datos en memoria, logrando una complejidad ciclomática de cero.
+
+## Robustez y Tolerancia a Fallos
+
+* **Sanitización Defensiva de Datos:** El método creador `listOf` dentro del orquestador incluye un pipeline de limpieza robusto (`String::trim`, `!s.isEmpty()`). Esta decisión arquitectónica aísla la lógica central de posibles errores de formato invisibles (como retornos de carro `\r` originados por los saltos de línea en sistemas Windows o líneas vacías al final de los ficheros), previniendo excepciones como `NumberFormatException`.

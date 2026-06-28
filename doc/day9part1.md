@@ -12,4 +12,8 @@ Solución diseñada bajo los principios de **Ingeniería del Software II** de la
 ## Paradigma Funcional y Combinatoria Declarativa
 
 * **Producto Cartesiano sin Bucles Anidados:** Para encontrar el rectángulo más grande, es necesario evaluar todas las parejas posibles de losetas rojas (Complejidad $O(N^2)$). En un diseño imperativo, esto requeriría dos bucles `for` anidados con manipulación de índices. Aquí, se ha resuelto de forma puramente declarativa mediante el aplanamiento de flujos: `IntStream.range().flatMap(...)`. Esto genera un flujo ininterrumpido de objetos `Rectangle` sin mutar ninguna variable de estado.
-* **Búsqueda Expresiva de Máximos:** La extracción del resultado final se lee como lenguaje natural gracias al uso de *Method References* y el compar
+* **Búsqueda Expresiva de Máximos:** La extracción del resultado final se lee como lenguaje natural gracias al uso de *Method References* y el comparador nativo de Java: `max(comparingLong(Rectangle::area))`. La complejidad ciclomática del método `largestArea` es exactamente cero.
+
+## Robustez y Sanitización de Datos
+
+* **Programación Defensiva Multicapa:** Conscientes de los problemas de formato en los sistemas de archivos (saltos de línea de Windows vs Linux), el sistema aplica una doble capa de sanitización. En `MovieTheater` se realiza un `split("\\r?\\n")` y un filtrado de líneas vacías, y en `RedTile` se aplica un `.trim()` a cada coordenada antes del `parseLong()`. Esto blinda la lógica de negocio frente a corrupciones de lectura invisibles.

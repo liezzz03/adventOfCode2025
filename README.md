@@ -27,14 +27,6 @@ El proyecto se centra en mantener una arquitectura estructurada, inmutable y alt
 
 ---
 
-## Uso de la IA
-
-Se ha utilizado inteligencia artificial como herramienta de apoyo académico para los siguientes procesos:
-* Asistencia en la redacción, revisión y estructuración de la documentación técnica en formato Markdown.
-* Al iniciar el proyecto, se utilizó para descubrir estrategias funcionales y patrones de la API de Streams de Java. Con la adquisición de experiencia, su uso evolucionó a corroborar y optimizar flujos declarativos.
-
----
-
 ## Índice de Soluciones
 
 |   Día    | Título                | Documentación           | Código Fuente | Técnicas y Estrategias Aplicadas |
