@@ -1,56 +1,60 @@
 # Advent of Code 2025 - Ingeniería del Software II
 
-Este repositorio contiene las soluciones para los retos del *Advent of Code 2025*, desarrolladas bajo un enfoque estricto de **Ingeniería del Software II (ULPGC)**.
+Este repositorio contiene las soluciones para los retos del *Advent of Code 2025*, desarrolladas bajo un enfoque de **Ingeniería del Software II (ULPGC)**.
 
-Más allá de la resolución algorítmica de los puzzles, el objetivo principal de este proyecto ha sido la aplicación práctica de **Principios SOLID**, **Clean Code**, **Paradigma Funcional** y **Arquitecturas Desacopladas** para gestionar la evolución de los requisitos de forma resiliente.
+Más allá de la resolución algorítmica de los puzzles, el objetivo principal de este proyecto ha sido aplicar de forma práctica los **principios de diseño** y **patrones** vistos en la asignatura para gestionar la evolución de los requisitos (parte 1 → parte 2 de cada día) de la forma más resiliente posible.
 
 ---
 
-## Filosofía de Diseño y Arquitectura
+## Filosofía de Diseño
 
-El proyecto se centra en mantener una arquitectura estructurada, inmutable y altamente expresiva. Se ha priorizado la legibilidad y el correcto modelado del dominio sobre la micro-optimización imperativa prematura.
+### 1. Principios SOLID
 
-### 1. Principios SOLID y Modelado de Dominio
-* **Single Responsibility Principle (SRP):** Estricta separación entre capas. Clases orquestadoras (`Playground`, `MovieTheater`) coordinan el flujo, mientras que las entidades de dominio (`Rectangle`, `Present`, `Range`) encapsulan la lógica física o matemática.
-* **Open/Closed Principle (OCP):** El diseño ha demostrado estar abierto a la extensión y cerrado a la modificación. Múltiples segundas partes (como el Día 4b o 6b) se resolvieron añadiendo nuevo comportamiento sin alterar las clases centrales del dominio.
-* **Tell, Don't Ask:** En lugar de utilizar las clases como contenedores pasivos de datos (getters/setters), se les envían mensajes para que ejecuten su propio comportamiento (ej. pedirle a un `Range` si contiene a otro).
-* **Prevención de *Primitive Obsession*:** Uso intensivo de `Records` para elevar enteros sueltos a entidades con significado semántico (ej. `Position`, `RedTile`, `JoltageState`).
+* **Principio de Responsabilidad Única (SRP):** separación entre clases orquestadoras (`Dial`, `Warehouse`, `Reactor`, `Playground`, `MovieTheater`...) que coordinan el flujo, y clases de dominio (`Range`, `Position`, `Rectangle`, `Present`...) que encapsulan únicamente su propia lógica.
+* **Principio Abierto/Cerrado (OCP):** en varios días, la entidad de dominio (`Range`, `Device`, `JunctionBox`, `Position`) se mantiene **sin modificar** entre la parte 1 y la parte 2, mientras que el comportamiento nuevo se añade en clases o implementaciones adicionales (por ejemplo, el `WorksheetReader` del día 6, que se extiende con una segunda implementación sin tocar la interfaz ni la primera).
+* **Principio de Sustitución de Liskov (LSP):** las distintas implementaciones de una misma interfaz (como las dos versiones de `CephalopodWorksheetReader` del día 6) son intercambiables allí donde se espera un `WorksheetReader`, sin que el código cliente (`WorksheetSolver`) necesite saber cuál de ellas está usando.
+* **Principio de Segregación de la Interfaz (ISP):** las interfaces del proyecto son deliberadamente pequeñas y de un único método (`WorksheetReader`, o las interfaces funcionales internas de los días 1 y 12), evitando obligar a una clase a implementar comportamiento que no necesita.
+* **Principio de Inversión de Dependencias (DIP):** las clases orquestadoras dependen de abstracciones y no de implementaciones concretas; por ejemplo, `WorksheetSolver` solo conoce la interfaz `WorksheetReader`, nunca la clase concreta que la implementa.
 
-### 2. Paradigma Funcional y Clean Code
-* **Inmutabilidad Absoluta:** Ausencia total de efectos secundarios (*side-effects*). Se evita el uso de listas mutables o matrices globales modificables. Cada transformación o paso recursivo genera nuevas instancias del estado.
-* **Programación Declarativa:** Uso avanzado de la **API de Streams** de Java. Se han eliminado bucles anidados `for/while` en favor de productos cartesianos aplanados (`flatMap`), evaluación perezosa (`takeWhile`, cortocircuitos) y reducciones customizadas (`reduce`).
-* **Patrones de Diseño Aplicados:**
-    * **Factory Method:** Construcción de grafos e instancias delegada a métodos estáticos como `.with()` o `.from()`.
-    * **Strategy:** Evitar `switch/if` masivos delegando comportamiento polimórfico a enumerados (ej. rotaciones del Día 12, direcciones del Día 1).
-    * **Null Object Pattern:** Manejo seguro de casos base evitando `NullPointerException` (ej. `Rectangle.Null`).
-    * **Memoization / Programación Dinámica:** Caché de estados inmutables en algoritmos recursivos costosos para evitar explosiones combinatorias.
+### 2. Otros principios de diseño
+
+* **Composición sobre Herencia:** en lugar de crear jerarquías de clases, el comportamiento variable se inyecta como un colaborador (por ejemplo, los enumerados `Direction` y `Angle` componen una función de rotación en vez de heredar de una clase base).
+* **Ley de Demeter:** las clases solo interactúan con sus colaboradores directos, evitando cadenas largas de llamadas (`objeto.getX().getY().getZ()`).
+* **Principio de no Repetir Código (DRY):** las clases de dominio compartidas entre la parte 1 y la parte 2 de un mismo día (`Range` del día 2, `Operation`/`Operator` del día 6, `TachyonCell`/`TachyonGrid` del día 7, `JunctionBox`/`Pair` del día 8, `Device` del día 11) se definen una sola vez y se reutilizan en ambas partes.
+* **Convención sobre Configuración (CoC):** se sigue la estructura estándar de un proyecto Maven (`src/main/java` / `src/test/java`), con un paquete por día y por parte, y cada clase de test nombrada siguiendo la convención `<Clase>Test`, sin necesidad de configuración adicional.
+* **Principio YAGNI:** cada clase expone únicamente la funcionalidad necesaria para resolver el puzzle correspondiente, evitando abstracciones genéricas o configurables pensadas para usos futuros que no se han llegado a necesitar.
+
+### 3. Patrones de diseño aplicados
+
+* **Factory Method:** la construcción de instancias se delega a métodos estáticos (`Dial.create()`, `Rotation.from()`, `Range.from()`, `Present.with()`, etc.) en lugar de exponer constructores públicos, lo que permite validar y centralizar la creación de objetos.
+* **Iterator:** el día 6 (*Trash Compactor*) implementa explícitamente la interfaz `Iterator` de Java para recorrer las operaciones de la hoja de cálculo fila a fila (parte 1) o columna a columna (parte 2), sin exponer la estructura interna de los datos.
 
 ---
 
 ## Índice de Soluciones
 
-|   Día    | Título                | Documentación           | Código Fuente | Técnicas y Estrategias Aplicadas |
+|   Día    | Título                | Documentación           | Código Fuente | Principios y Patrones Aplicados |
 |:--------:|-----------------------|-------------------------|---|---|
-| **1.1**  | *Secret Entrance*     | [Doc](doc/day1part1.md) | [Main](src/main/java/software/aoc/day1/part1) | Modelado de Dominio, Tell Don't Ask, SRP. |
-| **1.2**  | *Secret Entrance*     | [Doc](doc/day1part2.md) | [Main](src/main/java/software/aoc/day1/part2) | Strategy, Inyección de Dependencias, Polymorphism, LSP. |
-| **2.1**  | *Gift Shop*           | [Doc](doc/day2part1.md) | [Main](src/main/java/software/aoc/day2/part1) | Encapsulación Regex, Eliminación Complejidad Ciclomática. |
-| **2.2**  | *Gift Shop*           | [Doc](doc/day2part2.md) | [Main](src/main/java/software/aoc/day2/part2) | OCP (Open/Closed Principle), Mantenibilidad Declarativa. |
-| **3.1**  | *Lobby*               | [Doc](doc/day3part1.md) | [Main](src/main/java/software/aoc/day3/part1) | Funciones Reductoras Declarativas, Sanitización Defensiva. |
-| **3.2**  | *Lobby*               | [Doc](doc/day3part2-b.md) | [Main](src/main/java/software/aoc/day3/part2) | State Object (Selector), Streams Generativos (`iterate`). |
-| **4.1**  | *Printing Department* | [Doc](doc/day4part1.md) | [Main](src/main/java/software/aoc/day4/part1) | Travesía Declarativa de Matrices (`flatMap`), Rich Domain. |
-| **4.2**  | *Printing Department* | [Doc](doc/day4part2.md) | [Main](src/main/java/software/aoc/day4/part2) | Simulación Inmutable (Autómata Celular), Proyección Lógica. |
-| **5.1**  | *Cafeteria*           | [Doc](doc/day5part1.md) | [Main](src/main/java/software/aoc/day5/part1) | Short-Circuiting Evaluation (`anyMatch`), Value Objects. |
-| **5.2**  | *Cafeteria*           | [Doc](doc/day5part2.md) | [Main](src/main/java/software/aoc/day5/part2) | Algoritmo Merge Intervals, Null Object Pattern, Fold Funcional. |
-| **6.1**  | *Trash Compactor*     | [Doc](doc/day6part1.md) | [Main](src/main/java/software/aoc/day6/part1) | Iterator Pattern, Lazy Evaluation, Strategy (Operadores). |
-| **6.2**  | *Trash Compactor*     | [Doc](doc/day6part2.md) | [Main](src/main/java/software/aoc/day6/part2) | OCP Perfecto (cero cambios al dominio), Transposición de Matrices. |
-| **7.1**  | *Laboratories*        | [Doc](doc/day7part1.md) | [Main](src/main/java/software/aoc/day7/part1) | Recursividad Inmutable, Evasión Primitive Obsession. |
-| **7.2**  | *Laboratories*        | [Doc](doc/day7part2.md) | [Main](src/main/java/software/aoc/day7/part2) | Programación Dinámica, Reducción Espacio de Estados. |
-| **8.1**  | *Playground*          | [Doc](doc/day8part1.md) | [Main](src/main/java/software/aoc/day8/part1) | Estructuras Disjoint Sets, Producto Cartesiano Funcional. |
-| **8.2**  | *Playground*          | [Doc](doc/day8part2.md) | [Main](src/main/java/software/aoc/day8/part2) | Algoritmo Kruskal Declarativo, Retención de Estados. |
-| **9.1**  | *Movie Theater*       | [Doc](doc/day9part1.md) | [Main](src/main/java/software/aoc/day9/part1) | Geometría Funcional, Expresividad de Búsqueda de Máximos. |
-| **9.2**  | *Movie Theater*       | [Doc](doc/day9part2.md) | [Main](src/main/java/software/aoc/day9/part2) | Ray-Casting/Scanline, Búsqueda Binaria, Evaluación Perezosa. |
-| **10.1** | *Circuit Breaker*     | [Doc](doc/day10part1.md) | [Main](src/main/java/software/aoc/day10/part1) | Bitwise Operations de alta eficiencia, Parseo Regex Funcional. |
-| **10.2** | *Circuit Breaker*     | [Doc](doc/day10part2.md) | [Main](src/main/java/software/aoc/day10/part2) | Memoización, Poda Heurística (Pruning), Optionals Funcionales. |
-| **11.1** | *Factory*             | [Doc](doc/day11part1.md) | [Main](src/main/java/software/aoc/day11/part1) | Búsqueda en Profundidad (DFS) Inmutable, Listas Adyacencia. |
-| **11.2** | *Factory*             | [Doc](doc/day11part2.md) | [Main](src/main/java/software/aoc/day11/part2) | Patrón Memoize, Transiciones Puras, State Object Pattern. |
-|  **12**  | *Christmas Tree Farm* | [Doc](doc/day12.md)     | [Main](src/main/java/software/aoc/day12) | 2D Bin Packing, Strategy de Ángulos, Heurística Largest-First. |
+| **1.1**  | *Secret Entrance*     | [Doc](doc/day1part1.md) | [Main](src/main/java/software/aoc/day1/part1) | SRP, Factory Method. |
+| **1.2**  | *Secret Entrance*     | [Doc](doc/day1part2.md) | [Main](src/main/java/software/aoc/day1/part2) | ISP, Composición sobre Herencia, Factory Method. |
+| **2.1**  | *Gift Shop*           | [Doc](doc/day2part1.md) | [Main](src/main/java/software/aoc/day2/part1) | SRP, DRY, Factory Method. |
+| **2.2**  | *Gift Shop*           | [Doc](doc/day2part2.md) | [Main](src/main/java/software/aoc/day2/part2) | OCP, DRY, Factory Method. |
+| **3.1**  | *Lobby*               | [Doc](doc/day3part1.md) | [Main](src/main/java/software/aoc/day3/part1) | SRP, Factory Method. |
+| **3.2**  | *Lobby*               | [Doc](doc/day3part2-b.md) | [Main](src/main/java/software/aoc/day3/part2) | SRP, Factory Method. |
+| **4.1**  | *Printing Department* | [Doc](doc/day4part1.md) | [Main](src/main/java/software/aoc/day4/part1) | SRP, Factory Method. |
+| **4.2**  | *Printing Department* | [Doc](doc/day4part2.md) | [Main](src/main/java/software/aoc/day4/part2) | OCP, DRY, Factory Method. |
+| **5.1**  | *Cafeteria*           | [Doc](doc/day5part1.md) | [Main](src/main/java/software/aoc/day5/part1) | SRP, Factory Method. |
+| **5.2**  | *Cafeteria*           | [Doc](doc/day5part2.md) | [Main](src/main/java/software/aoc/day5/part2) | SRP, Factory Method. |
+| **6.1**  | *Trash Compactor*     | [Doc](doc/day6part1.md) | [Main](src/main/java/software/aoc/day6/part1) | SRP, ISP, DIP, Iterator, Factory Method. |
+| **6.2**  | *Trash Compactor*     | [Doc](doc/day6part2.md) | [Main](src/main/java/software/aoc/day6/part2) | OCP, LSP, Iterator, DRY. |
+| **7.1**  | *Laboratories*        | [Doc](doc/day7part1.md) | [Main](src/main/java/software/aoc/day7/part1) | SRP, DRY, Factory Method. |
+| **7.2**  | *Laboratories*        | [Doc](doc/day7part2.md) | [Main](src/main/java/software/aoc/day7/part2) | OCP, DRY, Factory Method. |
+| **8.1**  | *Playground*          | [Doc](doc/day8part1.md) | [Main](src/main/java/software/aoc/day8/part1) | SRP, DRY, Factory Method. |
+| **8.2**  | *Playground*          | [Doc](doc/day8part2.md) | [Main](src/main/java/software/aoc/day8/part2) | OCP, DRY, Factory Method. |
+| **9.1**  | *Movie Theater*       | [Doc](doc/day9part1.md) | [Main](src/main/java/software/aoc/day9/part1) | SRP, Factory Method. |
+| **9.2**  | *Movie Theater*       | [Doc](doc/day9part2.md) | [Main](src/main/java/software/aoc/day9/part2) | SRP, Factory Method. |
+| **10.1** | *Circuit Breaker*     | [Doc](doc/day10part1.md) | [Main](src/main/java/software/aoc/day10/part1) | SRP, Factory Method. |
+| **10.2** | *Circuit Breaker*     | [Doc](doc/day10part2.md) | [Main](src/main/java/software/aoc/day10/part2) | SRP, Factory Method. |
+| **11.1** | *Factory*             | [Doc](doc/day11part1.md) | [Main](src/main/java/software/aoc/day11/part1) | SRP, Factory Method. |
+| **11.2** | *Factory*             | [Doc](doc/day11part2.md) | [Main](src/main/java/software/aoc/day11/part2) | OCP, DRY, Factory Method. |
+|  **12**  | *Christmas Tree Farm* | [Doc](doc/day12.md)     | [Main](src/main/java/software/aoc/day12) | SRP, ISP, Composición sobre Herencia, DRY, Factory Method. |
